@@ -8,7 +8,7 @@ import * as CartActions from '../../store/modules/cart/actions';
 
 import { ProductList } from './styles';
 
-function Home({ addToCart, amount }) {
+function Home({ addToCartRequest, amount }) {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
@@ -34,7 +34,7 @@ function Home({ addToCart, amount }) {
           <strong>{product.title}</strong>
           <span>{product.priceFormatted}</span>
 
-          <button type="button" onClick={() => addToCart(product)}>
+          <button type="button" onClick={() => addToCartRequest(product.id)}>
             <div>
               <MdAddShoppingCart size={16} color="#fff" />
               {amount[product.id] || 0}

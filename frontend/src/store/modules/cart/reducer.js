@@ -1,7 +1,7 @@
 import produce from 'immer';
 
 export default function cart(state = [], action) {
-  if (action.type === '@cart/ADD') {
+  if (action.type === '@cart/ADD_SUCCESS') {
     return produce(state, (draft) => {
       const productIndex = draft.findIndex((p) => p.id === action.product.id);
 
